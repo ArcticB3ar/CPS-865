@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+	<head>
+		<title>Smart Window Blinds System Assignment</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<span class="image avatar"><img src="images/smart-door.jpg" alt="" /></span>
+					<h4 id="logo"><a href="#">CP8327/CPS865: <br>Assignment 1</a></h4>
+					<p style="font-size: 14px;">Modelling, Simulation and Code Synthesis<br>with Itemis Create</p>
+				</header>
+				<nav id="nav" style="font-size: 15px;">
+					<ul>
+						<li><a href="#one">Exercise 1: Model basic smart window blinds</a></li>
+						<li><a href="#two">Exercise 2: Define tests for your statechart model</a></li>
+						<li><a href="#three">Exercise 3: Integrate generated smart window blinds statechart to Java UI</a></li>
+						<li><a href="#four">Exercise 4: Model smart window blinds with a auto-adjustment feature</a></li>
+						<li><a href="#five">Exercise 5: Model smart window blinds with history state</a></li>
+						<li><a href="#six">Exercise 6: Model a smart hub system for smart window blinds</a></li>
+					</ul>
+				</nav>
+				<footer>
+					<ul class="icons">
+					</ul>
+				</footer>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+					<!-- One -->
+							<section id="intro">
+								<div class="image main" data-position="center">
+									<img src="images/banner.jpg" alt="" />
+								</div>
+								<div class="container">
+									<header class="major">
+										<h3>CP8327/CPS865 Model-Driven (Software) Engineering
+										</h3>
+										<h4>Modelling, Simulation and Code Synthesis with Itemis Create</h4></header></div>
+							</section>
+
+						<!-- One -->
+							<section id="one">
+								<div class="image main" data-position="center">
+									<img src="images/banner.jpg" alt="" />
+								</div>
+								<div class="container">
+									<header class="major">
+										<h2>Exercise 1</h2>
+										<p><h4>In this exercise, you will model and simulate the controller of a smart window blinds application with
+										basic smart window blind functionalities.</h4></p>
+									</header>
+									<h3>Requirements</h3>
+									<p>
+										R1. The smart window blinds system can switch between <i>Smart Control Mode</i> and <i>Manual Override Mode</i>.<br>
+										R2. The smart window blind should be able to open fully, close fully, and partially open in Smart Control Mode.<br>
+									</p>
+
+									<h1>Extend the statechart</h1>
+						      <p>
+						        You have to extend the provided statechart using the Itemis Create statechart editor.
+						      </p>
+
+						      <ul>
+								<li>Import this project into Itemis CREATE.</li>
+						        <li>Open the statechart <b>exercise1.ysc</b> by double-clicking the file in the project explorer.</li>
+						        <li>Follow the hints which are provided as comments in the model and add states, transitions, and declarations. Use composite states, if needed.</li>
+						        <li>Define trigger and actions on the transitions. Remember the syntax is '<i>trigger</i> / <i>action</i>'</li>
+						        <li>Use time-triggered events (e.g. after 10s) when needed. </li>
+						        <li>Hint: Try Ctrl-Space when editing text to get proposals.</li>
+						      </ul>
+
+						    <h1>Simulate the statechart</h1>
+						      <p>
+						        Any time while modelling you can run the simulation to check if everything is working
+						        according to the requirements. Simply right-click in the model and choose 'Run As > Statechart Simulation'
+						        from the context menu. You can even edit the statechart during simulation. When you save the changes you will
+						        be asked to terminate or restart the simulation.</p>
+						      </div>
+							</section>
+					<!-- Two -->
+							<section id="two">
+								<div class="container">
+									<header class="major">
+										<h2>Exercise 2</h2>
+										<p>
+											<h4>How do we make sure that the smart window blinds work according to the specified requirements? You will need to define tests for your statechart.
+										</h4>
+										</p>
+									</header>
+									<div class="image main" data-position="center">
+										<img src="images/e2-tests.png" alt="" style='height: 100%; width: 100%; object-fit: contain'/>
+									</div>
+									<h3>Requirements</h3>
+									<p>
+										R3. Fix the broken tests. Be aware that the statechart and the test cases may have failures.<br>
+					          			R4. Try to reach 100% coverage.
+									</p>
+									<h1>Complete the tests</h1>
+						        <p>
+						          The <i>JUnit</i> and <i>Coverage</i> views indicate that:<br>
+						          The tests are incomplete because the coverage is not at 100%.
+								</p>
+									<h3>Simulate</h3>
+									<p> Now, simulate the statechart by right-clicking on the <b>WindowBlinds_Test.sctunit</b> file and run as <b>SCT Unit</b>.</p>
+									</div>
+							</section>
+					<!-- Three -->
+							<section id="three">
+								<div class="container">
+									<header class="major">
+										<h2>Exercise 3</h2>
+										<p><h5>
+											Statecharts define reactive behavior that interacts with the environment. In this exercise,
+	code is generated from the smart window blinds statechart. This code is then integrated with a simple 
+	graphical UI of the smart window blind.</h5></p>
+									</header>
+									<div class="image main" data-position="center">
+										<img src="images/Exercise_3_IMG.png" alt="" style='height: 100%; width: 100%; object-fit: contain'/></div>
+									<h3>Requirements</h3>
+									<p>
+										R5. Generate source code from the statechart, and integrate the UI to the generated source code.<br>
+										R6. The UI must be able to control the smart window blind behaviour, triggering changes in open/half_open/close state of the blind.<br>
+										R7. Add additional connections from Exercise 4 to support all functionalities introduced in later exercises.
+									</p>
+
+									<p><h5>
+				            The state machine is not yet attached to the UI.
+				            Open the Java class <i>SmartBlindsCtrl.java</i> in <i>exercise3/(default package)</i> and follow the instructions that you will
+				            find in the source code comments.</h5>
+				          </p>
+									<h3>Simulate</h3>
+									<p> Now, simulate the UI by right-clicking on the <b>project</b> folder and run as <b>Java application</b>.</p>
+									</div>
+							</section>
+					<!-- Four -->
+					<section id="four">
+						<div class="container">
+							<header class="major">
+								<h2>Exercise 4</h2>
+								<p><h5>In this exercise, the smart window blinds auto-adjustment components must be integrated in the dashboard. This exercise introduces orthogonal regions.</h5></p>
+							</header>
+							<div class="image main" data-position="center">
+								<img src="images/e5-orthogonal.png" alt="" style='height: 100%; width: 100%; object-fit: contain'/>
+							</div>
+							<h6>Image Source: <a>https://www.itemis.com/en/products/itemis-create/documentation/user-guide/quick_ref_orthogonality</a></h6>
+							<h3>Requirements</h3>
+								<p>
+									R8. The smart window blind should automatically open and close based on the transition between day and night. This should be modelled using orthogonal regions.<br>
+									R9. The clock statechart is provided and has already been imported. Use its hour value, which changes every second.<br>
+									R10. The smart window blind's temperature status must be monitored and modelled using orthogonal regions.<br>
+									R11. The smart window blind should automatically close halfway if the room becomes hot.<br>
+									R12. The smart window blind should close automatically if the room temperature becomes too high.<br>
+									R13. The smart window blind should include a Child Mode that disables user commands.<br>
+									R14. However, automatic adjustment features should still be able to open and close the blinds.
+								</p>
+							<h3>Simulate</h3>
+							<p> Now, simulate the statechart by right-clicking on the <b>SmartBlinds.ysc</b> file and run as <b>Statechart Simulation</b>.</p>
+							</div>
+					</section>
+
+					<!-- Five -->
+					<section id="five">
+						<div class="container">
+							<header class="major">
+								<h2>Exercise 5</h2>
+								<p><h5>This exercise highlights the use of histories. Go into detail with shallow/deep histories.<br>
+									<br>It should be possible to interrupt the smart window blind behaviour during its regular autonomous operation.</h5></p>
+							</header>
+							<div class="image main" data-position="center">
+								<img src="images/e4-history.png" alt="" style='height: 100%; width: 100%; object-fit: contain'/>
+								</div>
+							<h6>Image Source: <a>https://www.itemis.com/en/products/itemis-create/documentation/user-guide/quick_ref_history_nodes</a></h6>
+							
+							<h3>Requirements</h3>
+								<p>
+									R15. The statechart model must contain shallow/deep history state.<br>
+									R16. When resuming from the manual override mode, the last scheduled regular or child mode state should be restored.<br>
+								</p>
+							<h3>Simulate</h3>
+							<p> Now, simulate the statechart by right-clicking on the <b>SmartBlinds.ysc</b> file and run as <b>Statechart Simulation</b>.</p>
+							</div>
+					</section>
+
+					<!-- Six -->
+					<section id="six">
+						<div class="container">
+							<header class="major">
+								<h2>Exercise 6</h2>
+									<p><h5>In this exercise, you will model a hub of three smart window blinds using the multi-statechart feature in itemis Create. 
+										The skeleton model for the hub is provided, but must be completed according to the requirements.
+								</h5></p>
+							</header>
+							<div class="image main" data-position="center">
+								<img src="images/e6-hub.png" alt="" style='height: 100%; width: 100%; object-fit: contain'/>
+								<!--ADD LINK TO FIGURE-->
+							</div>
+							<h6>Image Source: <a>https://www.itemis.com/en/products/itemis-create/documentation/user-guide/multi_state_machine_modelling</a></h6>
+							
+							<h3>Requirements</h3>
+							<p>
+								R17. The hub statechart must contain orthogonal regions based on the number of smart window blinds connected to the hub.<br>
+								R18. The hub must be able to open, half-open, and close each smart window blind unit separately.<br>
+								R19. The hub statechart must be able to control the <i>Regular Mode</i> and <i>Child Mode</i> states of all smart window blind units.<br>
+								R20. The hub must have a System OFF state that will set all smart window blind units to manual override mode.
+							</p>
+							<h3>Simulate</h3>
+							<p> Now, simulate the statechart by right-clicking on the <b>WindowBlindsHub.ysc</b> file and run as <b>Statechart Simulation</b>.</p>
+							</div>
+					</section>
+</html>

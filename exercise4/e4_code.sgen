@@ -1,0 +1,15 @@
+GeneratorModel for create::java {
+
+	const PROJECT : string = "Assignment 1"
+
+	const FOLDER : string = "src"
+
+	statechart WindowBlinds {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+			libraryTargetFolder = "src"
+		}
+	}
+}

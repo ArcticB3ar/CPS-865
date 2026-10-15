@@ -1,0 +1,16 @@
+<testsuite name="WindowBlinds_Test" time="">
+  <testcase name="TestCloseToOpen" classname="platform:/resource/Assignment%201/exercise2/WindowBlinds_Test.sctunit#WindowBlinds_Test.TestCloseToOpen" time="">
+  </testcase>
+  <testcase name="TestOpenToClose" classname="platform:/resource/Assignment%201/exercise2/WindowBlinds_Test.sctunit#WindowBlinds_Test.TestOpenToClose" time="">
+  </testcase>
+  <testcase name="TestCloseToHalfOpen" classname="platform:/resource/Assignment%201/exercise2/WindowBlinds_Test.sctunit#WindowBlinds_Test.TestCloseToHalfOpen" time="">
+  </testcase>
+  <testcase name="TestOpenToHalfOpen" classname="platform:/resource/Assignment%201/exercise2/WindowBlinds_Test.sctunit#WindowBlinds_Test.TestOpenToHalfOpen" time="">
+  </testcase>
+  <testcase name="TestHalfOpenToClose" classname="platform:/resource/Assignment%201/exercise2/WindowBlinds_Test.sctunit#WindowBlinds_Test.TestHalfOpenToClose" time="">
+  </testcase>
+  <testcase name="TestHalfOpenToOpen" classname="platform:/resource/Assignment%201/exercise2/WindowBlinds_Test.sctunit#WindowBlinds_Test.TestHalfOpenToOpen" time="">
+  </testcase>
+  <testcase name="TestManualOverrideMode" classname="platform:/resource/Assignment%201/exercise2/WindowBlinds_Test.sctunit#WindowBlinds_Test.TestManualOverrideMode" time="">
+  </testcase>
+</testsuite>

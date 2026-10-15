@@ -1,0 +1,130 @@
+testclass WindowBlinds_Test for statechart Exercise1 {
+	
+	/**
+	 * THIS TEST IS USED TO TEST THE COVERAGE FOR THE E1_Solution.ysc STATECHART
+	 */
+	 
+	
+	// TESTING RAISING EVENTS FROM CLOSE TO OPEN
+	@Test
+	operation TestCloseToOpen() {
+		enter
+		assert active (
+            main_region.SmartWindowBlindSystem.window_blind.WindowBlind.blinds_status.Close
+        )
+        raise open
+        assert active (
+            main_region.SmartWindowBlindSystem.window_blind.WindowBlind.blinds_status.Open
+        )
+        exit
+	}
+	
+	// TESTING RAISING EVENTS FROM OPEN TO CLOSE
+	@Test
+	operation TestOpenToClose(){
+		enter
+		assert active (
+            main_region.SmartWindowBlindSystem.window_blind.WindowBlind.blinds_status.Close
+        )
+		raise open // <- Remember to set the initial state
+		assert active (
+            main_region.SmartWindowBlindSystem.window_blind.WindowBlind.blinds_status.Open
+        )
+        raise close
+        assert active (
+            main_region.SmartWindowBlindSystem.window_blind.WindowBlind.blinds_status.Close
+        )
+
+		exit
+	}
+	
+	// TESTING RAISING EVENTS FROM CLOSE TO HALF OPEN
+	@Test
+	operation TestCloseToHalfOpen(){
+		enter
+		assert active (
+            main_region.SmartWindowBlindSystem.window_blind.WindowBlind.blinds_status.Close
+        )
+        raise half_open
+        assert active (
+            main_region.SmartWindowBlindSystem.window_blind.WindowBlind.blinds_status.HalfOpen
+        )
+		exit
+	}
+	
+	// TESTING RAISING EVENTS FROM OPEN TO HALF OPEN
+	@Test
+	operation TestOpenToHalfOpen(){
+		enter
+		assert active (
+            main_region.SmartWindowBlindSystem.window_blind.WindowBlind.blinds_status.Close
+        )
+        raise open
+        assert active (
+            main_region.SmartWindowBlindSystem.window_blind.WindowBlind.blinds_status.Open
+        )
+        raise half_open
+        assert active (
+            main_region.SmartWindowBlindSystem.window_blind.WindowBlind.blinds_status.HalfOpen
+        )
+		
+		exit
+	}
+	
+	// TESTING RAISING EVENTS FROM HALF OPEN TO CLOSE
+	@Test
+	operation TestHalfOpenToClose(){
+		enter
+		raise half_open
+		assert active (
+            main_region.SmartWindowBlindSystem.window_blind.WindowBlind.blinds_status.HalfOpen
+        )
+        raise close
+        assert active (
+            main_region.SmartWindowBlindSystem.window_blind.WindowBlind.blinds_status.Close
+        )
+
+		exit
+	}
+	
+	// TESTING RAISING EVENTS FROM HALF OPEN TO OPEN
+	@Test
+	operation TestHalfOpenToOpen(){
+		enter
+		raise half_open
+		assert active (
+            main_region.SmartWindowBlindSystem.window_blind.WindowBlind.blinds_status.HalfOpen
+        )
+        raise open
+        assert active (
+            main_region.SmartWindowBlindSystem.window_blind.WindowBlind.blinds_status.Open
+        )
+
+		exit
+	}
+	
+	// TESTING RAISING EVENTS FROM SMART CONTROL MODE TO MANUAL OVERRIDE MODE & BACK TO SMART CONTROL MODE
+    @Test
+    operation TestManualOverrideMode(){
+        enter
+	        assert active (
+	            main_region.SmartWindowBlindSystem.window_blind.WindowBlind.blinds_status.Close
+	        )
+	        raise open
+	        assert active (
+	            main_region.SmartWindowBlindSystem.window_blind.WindowBlind.blinds_status.Open
+	        )
+	        raise manual
+	        assert active (
+	            main_region.Manual_Override
+	        )
+	        raise manual
+	        assert active (
+	            main_region.SmartWindowBlindSystem
+	        )
+	        assert active (
+	            main_region.SmartWindowBlindSystem.window_blind.WindowBlind.blinds_status.Close
+	        )
+        exit
+    }
+}

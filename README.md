@@ -1,1 +1,2 @@
-# CPS-865---Labs
+Generate UI run this command in the terminal:
+mkdir -p /tmp/exercise3-classes && javac -d /tmp/exercise3-classes src/com/yakindu/core/*.java src/com/yakindu/core/rx/*.java src/Clock.java src/ScaledTimeTimerService.java exercise3/WindowBlinds.java exercise3/WindowBlind.java exercise3/WindowBlindPanel.java exercise3/WindowBlindControl.java && java -cp /tmp/exercise3-classes WindowBlind
